@@ -2,32 +2,21 @@
 COUNTRIES = ['VN', 'US', 'JP']
 COLORS = ['white', 'grey']
 
-FactoryBot.define do
-  factory :cat do
-    country { COUNTRIES.sample }
-    colour { COLORS.sample }
+%w(dog cat rabbit).each do |item|
+  FactoryBot.define do
+    factory item.to_sym do
+      country { COUNTRIES.sample }
+      colour { COLORS.sample }
+    end
   end
 end
 
-FactoryBot.define do
-  factory :dog do
-    country { COUNTRIES.sample }
-    colour { COLORS.sample }
-  end
-end
-
-
-FactoryBot.define do
-  factory :rabbit do
-    country { COUNTRIES.sample }
-    colour { COLORS.sample }
-  end
-end
-
-
-FactoryBot.define do
-  factory :shiba_dog do
-    country { COUNTRIES.sample }
-    colour { COLORS.sample }
+# I use array here to show that we able to support more breed of dogs
+%w(shiba_dog).each do |item|
+  FactoryBot.define do
+    factory item.to_sym, class: "Dogs::#{item.classify}" do
+      country { COUNTRIES.sample }
+      colour { COLORS.sample }
+    end
   end
 end
