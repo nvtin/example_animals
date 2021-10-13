@@ -2,9 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Animal, type: :module do
   describe 'when check available actions in a animal' do
-    let(:animal) do
-      Animal.new
-    end
+    let(:animal) { Animal.new }
 
     it 'should has class method: eat' do
       expect(animal).to respond_to(:eat)
@@ -20,9 +18,7 @@ RSpec.describe Animal, type: :module do
   end
 
   describe 'when check available actions in a dog' do
-    let(:dog) do
-      create(:dog)
-    end
+    let(:dog) { create(:dog) }
 
     it 'should able to eat' do
       expect(dog.eat).to eq true
@@ -38,9 +34,7 @@ RSpec.describe Animal, type: :module do
   end
 
   describe 'when check action for shiba dog' do
-    let(:shiba_dog) do
-      create(:shiba_dog)
-    end
+    let(:shiba_dog) { create(:shiba_dog) }
 
     it 'should able to eat' do
       expect(shiba_dog.eat).to eq true
@@ -56,9 +50,7 @@ RSpec.describe Animal, type: :module do
   end
 
   describe 'when check action for a cat' do
-    let(:cat) do
-      create(:cat)
-    end
+    let(:cat) { create(:cat) }
 
     it 'should able to eat' do
       expect(cat.eat).to eq true
@@ -74,9 +66,7 @@ RSpec.describe Animal, type: :module do
   end
 
   describe 'when check action for a rabbit' do
-    let(:rabbit) do
-      create(:rabbit)
-    end
+    let(:rabbit) { create(:rabbit) }
 
     it 'should able to eat' do
       expect(rabbit.eat).to eq true
@@ -89,7 +79,5 @@ RSpec.describe Animal, type: :module do
     it 'should able to burrow' do
       expect(rabbit.burrow).to eq true
     end
-
   end
-
 end
