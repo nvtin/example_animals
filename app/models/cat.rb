@@ -1,6 +1,6 @@
-class Cat < ApplicationRecord
-  include Animal
+class Cat < Animal
 
   def play
+    return true
   end
 end

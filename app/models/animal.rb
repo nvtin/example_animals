@@ -1,15 +1,13 @@
-module Animal
-  attr_accessor :colour, :country
-
+class Animal < ApplicationRecord
+  attr_accessor :colour, :country, :type, :breed
   has_many :images
 
-  private
   def eat
-
+    return true
   end
 
   def sleep
-
+    return true
   end
 
 end

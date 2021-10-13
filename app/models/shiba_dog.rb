@@ -1,6 +1,6 @@
 class ShibaDog < Dog
 
   def play
-    pp "Shiba can play"
+    return true
   end
 end

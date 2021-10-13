@@ -10,26 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_13_090919) do
+ActiveRecord::Schema.define(version: 2021_10_13_094432) do
 
-  create_table "cats", force: :cascade do |t|
+  create_table "animals", force: :cascade do |t|
     t.string "color"
     t.string "country"
+    t.string "string"
+    t.string "breed"
+    t.string "type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "dogs", force: :cascade do |t|
-    t.string "color"
-    t.string "country"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "dog_type"
-  end
-
-  create_table "rabbits", force: :cascade do |t|
-    t.string "color"
-    t.string "country"
+  create_table "images", force: :cascade do |t|
+    t.integer "owner_id"
+    t.string "url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
