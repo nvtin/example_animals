@@ -1,13 +1,10 @@
 class Animal < ApplicationRecord
-  attr_accessor :colour, :country, :type, :breed
+  attr_accessor :colour, :country
   has_many :images
 
-  def eat
-    return true
+  %w(eat sleep).each do |method_name|
+    define_method method_name do
+      return true
+    end
   end
-
-  def sleep
-    return true
-  end
-
 end
