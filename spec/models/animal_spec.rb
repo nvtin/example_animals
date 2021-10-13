@@ -1,18 +1,18 @@
 require 'rails_helper'
 
-RSpec.describe Animal, type: :module do
+RSpec.describe Animal do
   describe 'when check available actions in a animal' do
     let(:animal) { Animal.new }
 
-    it 'should has class method: eat' do
+    it 'should has instance method: eat' do
       expect(animal).to respond_to(:eat)
     end
 
-    it 'should has class method: sleep' do
+    it 'should has instance method: sleep' do
       expect(animal).to respond_to(:sleep)
     end
 
-    it 'should has instance method call and raise error not implementedError' do
+    it 'should not have instance method: play' do
       expect { animal.play }.to raise_error NoMethodError
     end
   end
