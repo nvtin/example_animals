@@ -1,9 +1,9 @@
 COUNTRIES = ['VN', 'US', 'JP']
 COLORS = ['white', 'grey']
+ANIMALS = [Dog, Dogs::ShibaDog, Cat, Rabbit]
 
-(1..5).each do |i|
-  Dog.create(country: COUNTRIES.sample, colour: COLORS.sample )
-  ShibaDog.create(country: COUNTRIES.sample, colour: COLORS.sample )
-  Cat.create(country: COUNTRIES.sample, colour: COLORS.sample)
-  Rabbit.create(country: COUNTRIES.sample, colour: COLORS.sample)
+5.times do |i|
+  ANIMALS.each do |animal|
+    animal.create(country: COUNTRIES.sample, colour: COLORS.sample )
+  end
 end
