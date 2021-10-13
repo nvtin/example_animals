@@ -1,4 +1,4 @@
-class ShibaDog < Dog
+class Dogs::ShibaDog < Dog
 
   def play
     return true
